@@ -1,0 +1,694 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{  
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    display: flex;
+    align-items: center;
+    background: #505050;
+    height: 110vh;
+}
+body>button {
+ display: none;   
+}
+.homepage{
+    background-image: url(https://www.tooplate.com/templates/2102_constructive/img/constructive_bg_01.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+.productspage{
+    background-image: url(https://www.tooplate.com/templates/2102_constructive/img/constructive_bg_02.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+.companypage{
+    background-image: url(https://www.tooplate.com/templates/2102_constructive/img/constructive_bg_03.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+.contactuspage{
+    background-image: url(https://www.tooplate.com/templates/2102_constructive/img/constructive_bg_04.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+header{
+    width: 24vw;
+    height: 110vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    transition:  all 0.1s ease;
+}
+nav{
+    padding: 10vh 0vw;
+    align-self: center;
+    transition:  all 0.3s ease;
+}
+ul{
+    list-style: none;
+    transition:  all 0.3s ease;
+}
+li{
+    padding: 20px;
+    width: 19vw;
+    overflow: hidden;
+    cursor: pointer;
+    transition:  all 0.3s ease;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition:  all 0.3s ease;
+}
+
+li:nth-of-type(1)>a::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f015";
+    display: inline-block;
+    font-weight: 900;
+    border: white solid 2px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 12px;
+}
+li:nth-of-type(2)>a::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f279";
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    border: white solid 2px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 12px;
+}
+li:nth-of-type(3)>a::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c0";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    border: white solid 2px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 12px;
+}
+li:nth-of-type(4)>a::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f086";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    border: white solid 2px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 12px;
+}
+li>a::after{
+    content: url(https://www.tooplate.com/templates/2102_constructive/img/nav-item.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-top: 15px;
+    width: inherit;
+    height: fit-content;
+}
+li:hover a::after{
+    content: url(https://www.tooplate.com/templates/2102_constructive/img/nav-item-highlight.png);
+}
+
+/*اول مره استخدم السيليكت ده*/
+li:hover a{
+    color: #33ccff;
+}
+
+li:hover a::before{
+    border-color: #33ccff;
+    color: #33ccff;
+}
+a{
+    transition: all .3s ease;
+}
+/*زوده فاللود علي او ليست ايتم*/
+/*اول مره استخدم السيليكت ده*/
+a.listitemactive{
+    color: #33ccff;
+}
+li>a.listitemactive::before{
+    border-color: #33ccff;
+}
+a.listitemactive::after{
+    content: url(https://www.tooplate.com/templates/2102_constructive/img/nav-item-highlight.png);
+}
+
+
+h1{
+    margin-left: 68px;
+    z-index: -1;
+}
+article{
+    display: flex;
+    width: 70vw;
+    padding: 30px;
+    z-index: -1;
+}
+.card{
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    margin: 20px 20px 20px 30px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    border: white solid 1px;
+}
+.icon{
+    align-self: center;
+}
+.icon>i{
+    border: white solid 2px;
+    border-radius: 50%;
+    margin-right: 25px;
+    padding: 12px;
+}
+.cardcontant>h2{
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+main>p{
+    width: 50vw;
+    font-size: 1.3rem;
+    line-height: 2.4;
+    margin: 3rem 3.8rem;
+}
+.btn{
+    margin: 5px 3.7rem;    
+    background: none;
+    border: white solid 1px;
+    width: fit-content;
+    align-self: flex-end;
+    padding: 20px 40px;
+    color: white;
+    cursor: pointer;
+}
+.btn:hover{
+    border-color: #33ccff;
+    color: #33ccff;
+}
+.products{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 62vw;
+}
+.showimg{
+    position: absolute;
+    width: 98.9vw;
+    height: 110vh;
+    z-index: 100;
+    background-color: #0b0b0b;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /*عشان تختفي بالراحه لازم احطها هنا كمان*/
+    transition: opacity 0.2s;
+    transition: display 0.2s;
+    cursor: zoom-out;
+
+}
+.open{
+    display: flex;
+    opacity: .8;
+    pointer-events: all;
+    /*عشان تظهر بالراحه لازم احطها هنا*/
+    transition: opacity 0.2s;
+    transition: display 0.2s;
+}
+.showimg>button{
+    background: transparent;
+    border: 0;
+    margin-left: 27.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.showimg>p{
+    margin-left: 26rem;
+    margin-top: .2rem;
+    font-size: 15px;
+}
+.showimg>button::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f00d";
+    display: inline-block;
+    padding: 5px;
+    font-weight: 900;
+    color: #FFF;
+    font-size: 20px;
+}
+.showimg>section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.showimg>section img{
+    width: 30vw;
+    height: 88vh;
+    cursor: pointer;
+}
+.showimg>section button{
+    background: transparent;
+    border: 0;
+}
+.showimg>section i{
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    margin: 0px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: #fff;
+    opacity: .6;
+}
+.showimg>section i:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.galary{
+    display: flex;
+    column-gap: 13px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 60.8vw;
+}
+.galary>section{
+    width: 54vw;
+    display: flex;
+    overflow: hidden;
+    column-gap: 30px;
+    width: 57vw;
+}
+.galary>section{
+    transition: all 0.3s ease;
+}
+.galary img{
+    width: 17.5vw;
+    cursor: pointer;
+}
+/*لسه الازرار اكتفيف ولا اليمين والشمال ةالي تحت2 ولسه في جافا ولسه ف فتح كل صوره كده لسه 4حاجات*/
+.prevbtn,
+.nextbtn{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    opacity: .75;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+/*بردو لازم اول م يحمل الصفحه يتشك علي الصور يمين وشمال ويفعل ده*/
+.diactivate{
+    opacity: .25 !important;
+    /*cursor: not-allowed;*/
+}
+.prevbtn:hover,
+.nextbtn:hover{
+    opacity: 1;
+}
+img{
+    transition: all 0.3s ease;
+}
+.controlbtn{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    opacity: .25;
+    background-color: black;
+}
+.controlbtn:hover{
+    opacity: 1;
+}
+.controlbtn:nth-child(4),
+.controlbtn:nth-child(5),
+.controlbtn:nth-child(6){
+    display: none;
+}
+/*لازم فال
+js
+اخليه اول ما ي
+load
+يزوده ع اول زرار
+*/
+.active{
+    opacity: .75 !important;
+    background-color: black;
+}
+button{
+    transition: all 0.3s ease;
+}
+.cardcontant>p{
+    font-size: 1rem;
+    line-height: 2.2;
+}
+.contactus{
+    width: 59vw;
+    height: 68vh;
+    background-color: rgba(0,0,0,0.5);
+    margin-left: 50px;
+    padding: 90px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.contactus>h1{
+    margin: 0px 10px 30px 10px;
+}
+.contactus>section{
+    display: flex;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+form>input,
+form>textarea{
+    background: none;
+    border: white solid 1px;
+    margin: 10px;
+    padding: 20px;
+    width: 360px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+form>.btn{
+    background: none;
+    border: white solid 1px;
+    width: fit-content;
+    align-self: flex-end;
+    margin: 10px;
+    padding: 20px 40px;
+    color: white;
+}
+form>input:focus,
+form>textarea:focus,
+form>button:focus{
+    /*اول مره اعرفها ديييييييييييييييييي*/
+    outline: none;
+    border-color: #33ccff;
+    box-shadow: 0 0 10px #33ccff;
+}/*
+form>input:focus-visible,
+form>textarea:focus-visible,
+form>button:focus-visible{
+    outline: none;
+    border-color: #33ccff solid 1px;
+}*/
+.contactus>section>section>p{
+    font-size: 1rem;
+    line-height: 2.2;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: #ffffffb3;
+    width: 25vw;
+}
+.contactus>section>section>address{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;    
+    margin-top: 0;
+    margin-left: 1rem;
+    color: #ffffffb3;
+}
+footer{
+    position: absolute;
+    color: white;
+    right: 20px;
+    bottom: -87px;
+    margin-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 25px;
+    font-size: 16px;
+}
+footer>p>a{
+    font-size: 16px;
+}
+
+/*مفاضلش غير شاشه الموبايل*/
+@media screen and (max-width: 990px) {
+    /*home page*/
+    body>button {
+        width: 60px;
+        height: 50px;
+        border: 1px solid #33ccff;
+        background-color: #0b0b0b;
+        opacity: .8;
+        display: block;
+        top: 4px;
+        position: absolute;
+        cursor: pointer;
+        transition:  all 0.3s ease;
+    }
+    body>button>i {
+        color: #33ccff;
+    }
+    header{
+        display: none;
+        width: 37vw;
+        height: 136vh;
+        transition:  all 0.3s ease;
+        position: fixed;
+        background: #000000e0;
+        z-index: 100;
+    }
+    header>nav{
+        padding: 18vh 1vw;
+        transition:  all 0.3s ease;
+    }
+    header>nav>ul>li{
+        width: 26vw;
+        transition:  all 0.3s ease;
+    }
+    main{
+        margin: auto;
+    }
+    .homepage{
+        height: 100vh;
+    }
+    .homepage h1{
+        margin-left: 18px;
+    }
+    .homepage>main>p{
+        width: 76vw;
+        margin: 3rem 1rem;
+    }
+    .homepage .btn{
+        margin: 0px 1rem;
+    }
+    .homepage>footer{
+        right: 5vw;
+        padding: 10px 12px;
+        bottom: 0vh;
+    }
+
+    /*.contact us page*/
+    .contactuspage{
+        height: 136vh;
+    }
+    .contactus {
+        width: 75vw;
+        height: 105vh;
+        margin: 1rem 0;
+        padding: 60px 50px;
+    }
+    .contactuspage>header>nav{
+        align-self: flex-start;
+    }
+    .contactus>h1{
+        z-index: 0;
+        color: white;
+        opacity: .9;
+    }
+    .contactus>section{
+        flex-direction: column;
+    }
+    form>input, form>textarea {  
+        width: 66vw;
+    }
+    .contactus>section>section>p {
+        width: 76vw;
+    }
+    .contactuspage>footer{
+        bottom: -37vh;
+        margin-bottom: 1rem;
+    }
+
+    /*company page*/
+    .companypage,
+    .productspage{
+        height: 100vh;
+    }
+    .companypage>header>nav,
+    .homepage>header>nav,
+    .productspage>header>nav{
+        align-self: center;
+    }
+    .companypage>main{
+        margin: 0rem auto;
+    }
+    .companypage>main>article{
+        width: 90vw;
+        padding: 30px;
+    }
+    .card{
+        padding: 43px;
+    }
+    .companypage>footer{
+        bottom: -12px;
+    }
+
+    /*products page*/
+    .productspage>main{
+        z-index: 1;
+    }
+    .productspage h1{
+        margin: 0px;
+    }
+    .products{
+        width: 57vw;
+    }
+    .galary{
+        width: 72vw;
+        column-gap: 4px;
+    }
+    .galary>section{
+        width: 65vw;
+    }
+    .galary img{
+        width: 32vw;
+    }
+    .diactivate {
+        cursor: not-allowed; 
+    }
+    .controlbtn:nth-child(4),
+    .controlbtn:nth-child(5){
+        display: initial;
+    }
+    .controlbtn:nth-child(6){
+        display: none;
+    }
+    .showimg>section img {
+        width: 60vw;
+    }
+    .productspage>footer{
+        bottom: -10px;
+    }
+  }
+  
+
+@media screen and (max-width: 638px) {
+    header{
+        width: 42vw;
+        transition:  all 0.3s ease;
+    }
+    header>nav>ul>li{
+        width: 32vw;
+        transition:  all 0.3s ease;
+    }
+    .homepage h1 {
+        margin-left: 0px;
+    }
+    .homepage>main>p {
+        width: 89.5vw;
+        margin: 3rem 0rem;
+    }
+    .homepage .btn {
+        margin: 0rem;
+    }
+
+    /*our compny page*/
+    .companypage {
+        height: 145vh;
+    }
+    .companypage>header{
+        height: 145vh;
+    }
+    .companypage>header>nav{
+        align-self: flex-start;
+        padding: 16vh 1vw;
+    }
+    .companypage h1 {
+        margin-left: 1.5rem;
+    }
+    .companypage>main>article {
+        padding: 0px;
+        flex-direction: column;
+    }
+    .card {
+        padding: 30px;
+    }
+    .icon>i {
+        margin-right: 21px;
+        padding: 22px;
+        font-size: 34px;
+    }
+    .companypage>footer {
+        bottom: -352px;
+    }
+
+    /*contact us page no changes*/
+
+    /*our products page*/
+    .products {
+        width: 38vw;
+    }
+    .galary {
+        width: 57vw;
+    }
+    .galary>section {
+        width: 47vw;
+    }
+    .galary img {
+        width: 48vw;
+    }
+    .controlbtn {
+        margin: 1rem .5em;
+    }
+    .controlbtn:nth-child(6){
+        display: initial;
+    }
+}
+/*640px*/
+/*990px*/
