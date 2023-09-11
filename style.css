@@ -11,9 +11,7 @@ body{
     align-items: center;
     background: #505050;
     height: 110vh;
-}
-body>button {
- display: none;   
+    scroll-behavior: smooth;
 }
 .homepage{
     background-image: url(https://www.tooplate.com/templates/2102_constructive/img/constructive_bg_01.jpg);
@@ -36,11 +34,7 @@ body>button {
     background-size: cover;
 }
 header{
-    width: 24vw;
-    height: 110vh;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    transition:  all 0.1s ease;
+    display: none;
 }
 nav{
     padding: 10vh 0vw;
@@ -150,7 +144,6 @@ a.listitemactive::after{
 
 h1{
     margin-left: 68px;
-    z-index: -1;
 }
 article{
     display: flex;
@@ -211,7 +204,8 @@ main>p{
     width: 98.9vw;
     height: 110vh;
     z-index: 100;
-    background-color: #0b0b0b;
+    /*هخلي الباك جروند فيها اوباستي عشان يبان ضل*/
+    background-color: rgb(11 11 11 / 80%);
     opacity: 0;
     pointer-events: none;
     top: 0;
@@ -227,7 +221,8 @@ main>p{
 }
 .open{
     display: flex;
-    opacity: .8;
+    /*هخلي الاوباستي بواحد عشان يظهر وتظهر الصور واضحه*/
+    opacity: 1;
     pointer-events: all;
     /*عشان تظهر بالراحه لازم احطها هنا*/
     transition: opacity 0.2s;
@@ -261,7 +256,7 @@ main>p{
     width: 100%;
 }
 .showimg>section img{
-    width: 30vw;
+    width: 350px;
     height: 88vh;
     cursor: pointer;
 }
@@ -292,21 +287,18 @@ main>p{
     justify-content: center;
     overflow: hidden;
     width: 60.8vw;
+    scroll-behavior: smooth;
 }
 .galary>section{
     width: 54vw;
     display: flex;
     overflow: hidden;
-    column-gap: 30px;
+    /*column-gap: 30px;*/
     width: 57vw;
-}
-.galary>section{
+    scroll-behavior: smooth;
     transition: all 0.3s ease;
 }
-.galary img{
-    width: 17.5vw;
-    cursor: pointer;
-}
+
 /*لسه الازرار اكتفيف ولا اليمين والشمال ةالي تحت2 ولسه في جافا ولسه ف فتح كل صوره كده لسه 4حاجات*/
 .prevbtn,
 .nextbtn{
@@ -325,13 +317,14 @@ main>p{
 /*بردو لازم اول م يحمل الصفحه يتشك علي الصور يمين وشمال ويفعل ده*/
 .diactivate{
     opacity: .25 !important;
-    /*cursor: not-allowed;*/
+    cursor: not-allowed;
 }
 .prevbtn:hover,
 .nextbtn:hover{
     opacity: 1;
 }
 img{
+    margin-left: 10px;
     transition: all 0.3s ease;
 }
 .controlbtn{
@@ -341,16 +334,12 @@ img{
     border: none;
     cursor: pointer;
     margin-top: 2rem;
+    margin-right: 8px;
     opacity: .25;
     background-color: black;
 }
 .controlbtn:hover{
     opacity: 1;
-}
-.controlbtn:nth-child(4),
-.controlbtn:nth-child(5),
-.controlbtn:nth-child(6){
-    display: none;
 }
 /*لازم فال
 js
@@ -466,9 +455,9 @@ footer>p>a{
     font-size: 16px;
 }
 
-/*مفاضلش غير شاشه الموبايل*/
-@media screen and (max-width: 990px) {
-    /*home page*/
+
+
+@media screen and (min-width: 320px) {
     body>button {
         width: 60px;
         height: 50px;
@@ -484,211 +473,662 @@ footer>p>a{
     body>button>i {
         color: #33ccff;
     }
-    header{
-        display: none;
-        width: 37vw;
-        height: 136vh;
-        transition:  all 0.3s ease;
-        position: fixed;
-        background: #000000e0;
-        z-index: 100;
+    body>button.show+header{
+        display: flex;
+        width: 61vw;
+        height: 100vh;
+        background: rgb(0 0 0 / 80%);
+        max-width: 300px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
     }
-    header>nav{
-        padding: 18vh 1vw;
-        transition:  all 0.3s ease;
+    .homepage>header>nav>ul>li,
+    .companypage>header>nav>ul>li,
+    .contactuspage>header>nav>ul>li,
+    .productspage>header>nav>ul>li{
+        width: 55vw;
+        max-width: 265px;
+        padding: 20px 0 20px 10px;
     }
-    header>nav>ul>li{
-        width: 26vw;
-        transition:  all 0.3s ease;
+    .homepage>header>nav>ul>li>a.listitemactive::before,
+    .companypage>header>nav>ul>li>a.listitemactive::before,
+    .contactuspage>header>nav>ul>li>a.listitemactive::before,
+    .productspage>header>nav>ul>li>a.listitemactive::before{
+        margin-right: 10px;
+        padding: 8px;
     }
-    main{
-        margin: auto;
+    .homepage>header>nav>ul>li>a,
+    .companypage>header>nav>ul>li>a,
+    .contactuspage>header>nav>ul>li>a,
+    .productspage>header>nav>ul>li>a{
+        font-size: 18px;
     }
+    .homepage>header>nav>ul>li>a.listitemactive::after,
+    .companypage>header>nav>ul>li>a.listitemactive::after,
+    .contactuspage>header>nav>ul>li>a.listitemactive::after,
+    .productspage>header>nav>ul>li>a.listitemactive::after{
+        width: 180px;
+    }
+    
+    
+    /*home page*/
     .homepage{
         height: 100vh;
     }
-    .homepage h1{
-        margin-left: 18px;
+    .homepage>button:nth-child(1).show,
+    .contactuspage>button:nth-child(1).show,
+    .productspage>button:nth-child(1).show{
+        left: 61vw;
+        transition: all .3s ease;
     }
-    .homepage>main>p{
-        width: 76vw;
-        margin: 3rem 1rem;
+    .homepage>main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min-content;
+        min-width: 300px;
+        margin: auto;
     }
-    .homepage .btn{
-        margin: 0px 1rem;
+    .homepage>main>h1{
+        text-shadow: 0px 3px 2px rgba(50, 50, 50, 1);
+        font-size: 2.5rem;
+        font-weight: 300;
+        align-self: self-start;
+        margin-left: 0;
     }
-    .homepage>footer{
-        right: 5vw;
+    .homepage>main>p {
+        width: 95vw;
+        margin: 2rem 0rem;
+        align-self: self-start;
+    }
+    .homepage>main .btn{
+        width: 220px;
+        align-self: flex-start;
+        margin: 0px;
+    }
+    .homepage>footer {
+        left: auto;
+        margin-bottom: 10px;
+        right: 20px;
         padding: 10px 12px;
-        bottom: 0vh;
+        bottom: 2vh;
+        z-index: -1;
     }
 
-    /*.contact us page*/
+    /*companypage */
+    .companypage>button:nth-child(1).show{
+        left: 60vw;
+        transition: all .3s ease;
+    }
+    .companypage {
+        height: 1815px;
+    }
+    .companypage>main {
+        margin: 0rem auto;
+        position: absolute;
+        top: 50px;
+        z-index: -1;
+    }
+    .companypage>main>h1{
+        margin-left: 30px;
+        text-align: left;
+    }
+    .companypage>main>article {
+        flex-direction: column;
+        padding: 0;
+        width: 94vw;
+        align-items: center;
+    }
+    .companypage>main>article>section>.card{
+        flex-direction: column;
+        padding: 30px;
+        gap: 8px;
+        max-width: 329px;
+        background-color: rgb(0 0 0 / .3);
+    }
+    .companypage>main>article>section>.card>.cardcontant{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .companypage>main>article>section>.card>.icon>i {
+        padding: 15px;
+        font-size: 39px;
+        margin-bottom: 16px;
+    }
+    .companypage>footer {
+        right: 10px;
+        left: 10px;
+        bottom: -100vh;
+    }
+
+    /*contactus page*/
     .contactuspage{
-        height: 136vh;
+        height: 1130px;
+        position: relative;
+    }
+    .contactuspage>main{
+        margin: 0 auto;
+        width: 95vw;
     }
     .contactus {
-        width: 75vw;
-        height: 105vh;
-        margin: 1rem 0;
-        padding: 60px 50px;
-    }
-    .contactuspage>header>nav{
-        align-self: flex-start;
+        height: 1030px;
+        width: auto;
+        margin: 0px 15px;
+        padding: 30px 35px 0px 35px;
+        background-color: rgba(0,0,0,0.3);
     }
     .contactus>h1{
-        z-index: 0;
         color: white;
-        opacity: .9;
+        text-shadow: 0px 3px 2px rgba(50, 50, 50, 1);
+        margin: 0;
+        max-width: 462px;
     }
     .contactus>section{
         flex-direction: column;
     }
-    form>input, form>textarea {  
-        width: 66vw;
+    .contactus>section>form{
+        align-items: center;
+        width: 100%;
+        align-self: center;
+    }
+    .contactus>section>form>input, form>textarea {
+        width: 98%;
+        max-width: 462px;
+        margin: 10px 0;
+        padding: 20px 0 20px 5px;
     }
     .contactus>section>section>p {
-        width: 76vw;
+        width: 50vw;
     }
     .contactuspage>footer{
-        bottom: -37vh;
-        margin-bottom: 1rem;
+        bottom: 0vh;
+        width: 230px;
+        right: 10px;
     }
 
-    /*company page*/
-    .companypage,
+
+    /*products page*/
     .productspage{
         height: 100vh;
     }
-    .companypage>header>nav,
-    .homepage>header>nav,
-    .productspage>header>nav{
-        align-self: center;
-    }
-    .companypage>main{
-        margin: 0rem auto;
-    }
-    .companypage>main>article{
-        width: 90vw;
-        padding: 30px;
-    }
-    .card{
-        padding: 43px;
-    }
-    .companypage>footer{
-        bottom: -12px;
-    }
-
-    /*products page*/
     .productspage>main{
-        z-index: 1;
+        margin: 30px auto;
+        max-width: 314px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
     }
-    .productspage h1{
-        margin: 0px;
+    .productspage h1 {
+        margin: 0;
+        align-self: flex-start;
     }
-    .products{
-        width: 57vw;
+    .products {
+        width: 76vw;
+        padding: 30px 0;
     }
-    .galary{
-        width: 72vw;
-        column-gap: 4px;
+    .galary {
+        width: 94vw;
+        column-gap: 10px;
     }
-    .galary>section{
-        width: 65vw;
+    .galary>section {
+        width: 85vw;
+        max-width: 300px;
     }
-    .galary img{
-        width: 32vw;
-    }
-    .diactivate {
-        cursor: not-allowed; 
-    }
-    .controlbtn:nth-child(4),
-    .controlbtn:nth-child(5){
-        display: initial;
-    }
-    .controlbtn:nth-child(6){
-        display: none;
-    }
-    .showimg>section img {
-        width: 60vw;
+    .galary img {
+        width: 100vw;
+        cursor: pointer;
     }
     .productspage>footer{
         bottom: -10px;
     }
-  }
-  
 
-@media screen and (max-width: 638px) {
-    header{
-        width: 42vw;
-        transition:  all 0.3s ease;
+    /*modal*/
+    .showimg {
+        width: 108vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
     }
-    header>nav>ul>li{
-        width: 32vw;
-        transition:  all 0.3s ease;
+    .showimg>button {
+        margin-left: 0;
+        align-self: end;
+        margin-right: 20px;
     }
-    .homepage h1 {
-        margin-left: 0px;
+    .showimg>section {
+        width: 55vw;
+        max-width: 287px;
+        justify-content: flex-start;
     }
+    .showimg>section img {
+        width: 68vw;
+        height: 66vh;
+        margin-left: 0;
+        max-width: 350px;
+    }
+    .showimg>section button {
+        display: none;
+    }
+    .showimg>p {
+        margin-left: 0;
+        align-self: end;
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width: 500px){
+    .homepage>button:nth-child(1).show,
+    .companypage>button:nth-child(1).show,
+    .contactuspage>button:nth-child(1).show,
+    .productspage>button:nth-child(1).show{
+        left: 300px;
+    }
+    .companypage>header>nav,
+    .homepage>header>nav,
+    .productspage>header>nav,
+    .contactuspage>header>nav{
+        margin: auto;
+    }
+    .homepage>header>nav>ul>li,
+    .companypage>header>nav>ul>li,
+    .contactuspage>header>nav>ul>li,
+    .productspage>header>nav>ul>li{
+        width: 51vw;
+        max-width: 230px;
+        padding: 0px 0 20px 10px;
+    }
+
     .homepage>main>p {
-        width: 89.5vw;
-        margin: 3rem 0rem;
+        width: 90vw;
+        max-width: 700px;
+        margin: 2rem 0rem 3rem 0;
+        letter-spacing: .25px;
+        align-self: self-start;
     }
-    .homepage .btn {
-        margin: 0rem;
+    .homepage h1{
+        margin-left: 0;
+    }
+    .homepage>footer{
+        width: max-content;
+        right: 30px;
     }
 
-    /*our compny page*/
     .companypage {
-        height: 145vh;
+        height: 1380px;
     }
-    .companypage>header{
-        height: 145vh;
+    .companypage>main{
+        top: 55px;
     }
-    .companypage>header>nav{
-        align-self: flex-start;
-        padding: 16vh 1vw;
+    .companypage>main>h1 {
+        margin-left: 50px;
     }
-    .companypage h1 {
-        margin-left: 1.5rem;
+    .companypage>main>article>section>.card {
+        flex-direction: row;
+        width: 75vw;
+        max-width: 576px;
     }
-    .companypage>main>article {
-        padding: 0px;
-        flex-direction: column;
-    }
-    .card {
+    .companypage>main>article>section>.card>.icon>i {
         padding: 30px;
-    }
-    .icon>i {
-        margin-right: 21px;
-        padding: 22px;
-        font-size: 34px;
+        margin-bottom: 0px;
+        margin-right: 20px;
     }
     .companypage>footer {
-        bottom: -352px;
+        bottom: -85vh;
+        padding: 10px;
+        text-align: end;
+        right: auto;
+        left: 10%;
+        width: 70vw;
+        max-width: 412px;
     }
-
-    /*contact us page no changes*/
-
-    /*our products page*/
+}
+@media screen and (min-width: 600px){
+    .contactuspage {
+        height: 1015px;
+    }
+    .contactus {
+        height: auto;
+        padding: 60px 55px;
+    }
+    .contactus>h1 {
+        margin: 0 0px 10px 20px;
+    }
+    .contactus>section>form {
+        width: 100%;
+        margin: 0 0 0 20px;
+    }
+    .contactus>section>form>input, form>textarea {
+        width: 100%;
+        max-width: 772px;
+    }
+    .contactus>section>section>p {
+        width: 75vw;
+        margin-bottom: 0;
+    }
+    .contactuspage>footer{
+        margin-bottom: 15px;
+        width: 412px;
+    }
+}
+@media screen and (min-width: 640px){
+    .productspage>main{
+        max-width: 550px;
+    }
     .products {
-        width: 38vw;
+        width: 88vw;
     }
     .galary {
-        width: 57vw;
+        width: 95vw;
     }
     .galary>section {
-        width: 47vw;
+        width: 100vw;
+        max-width: 600px;
+        /*column-gap: 20px;*/
     }
     .galary img {
-        width: 48vw;
+        width: 42vw;
     }
-    .controlbtn {
-        margin: 1rem .5em;
+    .showimg>section {
+        width: 83vw;
+        max-width: 530px;
     }
-    .controlbtn:nth-child(6){
+    .showimg>section button {
         display: initial;
     }
 }
-/*640px*/
-/*990px*/
+@media screen and (min-width: 768px){
+    .companypage {
+        height: 970px;
+    }
+    .companypage>main {
+        top: 60px;
+    }
+    .companypage>main>h1 {
+        margin-bottom: 15px;
+    }
+    .companypage>main>article {
+        flex-direction: row;
+        width: 96vw;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+    }
+    .companypage>main>article>section{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .companypage>main>article>section>.card {
+        flex-direction: column;
+        width: 34vw;
+        max-width: 400px;
+        margin: 0;
+    }
+    .companypage>footer {
+        bottom: -25vh;
+        margin: 0;
+        right: 38px;
+        left: auto;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body>button {
+        display: none;
+    }
+    .homepage{
+        height: 100vh;
+    }
+    .homepage>header,
+    .companypage>header,
+    .contactuspage>header,
+    .productspage>header{
+        display: flex;
+        width: 35vw;
+        max-width: 399px;
+        height: 99vh;
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .homepage>header>nav>ul>li,
+    .productspage>header>nav>ul>li,
+    .companypage>header>nav>ul>li,
+    .contactuspage>header>nav>ul>li{
+        padding: 20px 0 20px 10px;
+    }
+
+    .homepage>main,
+    .companypage>main,
+    .contactuspage>main{
+        width: 18vw;
+        margin: 0 auto;
+        min-width: auto;
+    }
+    .homepage>main>h1,
+    .companypage>main>h1{
+        width: 36vw;
+    }
+
+    .homepage>main>p {
+        width: 59vw;
+        align-self: self-start;
+    }
+    .homepage>footer {
+        right: 5%;
+        left: auto;
+        margin-bottom: 30px;
+        width: fit-content;
+        bottom: 0px;
+    }
+
+    
+    .companypage{
+        height: 136vh;
+    }
+    .companypage>main{
+        position: initial;
+    }
+    .companypage>main>h1 {
+        margin-left: 0;
+    }
+    .companypage>main>article {
+        flex-direction: column;
+        width: 50vw;
+    }
+    .companypage>main>article>section>.card {
+        flex-direction: row;
+        width: 48vw;
+        max-width: 866px;    
+    }
+    .companypage>footer {
+        bottom: -34vh;
+    }
+
+    /*contactus page*/
+    .contactuspage>header>nav{
+        position: absolute;
+        top: 15%;
+        right: 20%;
+        padding: 0;
+    }
+    .contactuspage {
+        height: 130vh;
+    }
+    .contactus {
+        height: 96vh;
+        width: 42vw;
+    }
+    .contactus>h1 {
+        margin: 0 0px 10px 30px;
+        width: 90%;
+    }
+    .contactus>section>form {
+        width: 90%;
+    }
+    .contactus>section>section>p {
+        width: 45vw;
+    }
+    .contactus>section>section>address {
+        margin: 0 auto;
+        width: 45vw;
+    }
+
+    /*products page*/
+    .productspage>main {
+        max-width: max-content;
+        width: 231px;
+        margin: 0 auto;
+    }
+    .products {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .galary {
+        width: 615px;
+    }
+    .galary>section {
+        width: 100vw;
+        max-width: 590px;
+    }
+    .galary img {
+        width: 180px;
+        max-width: max-content;
+    }
+
+    .showimg {
+        align-items: end;
+    }
+    .showimg>section {
+        width: 93%;
+        justify-content: space-between;
+        max-width: initial;
+    }
+    .showimg>section img {
+        width: 350px;
+        height: 88vh;
+        max-width: max-content;
+    }
+    .showimg>p {
+        margin-right: 0;
+        align-self: center;
+        margin-left: 24rem;
+    }
+    .showimg>button {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .homepage>header,
+    .companypage>header,
+    .contactuspage>header{
+        width: 26vw;
+        max-width: 350px;
+    }
+    .homepage>main {
+        width: 30vw;
+    }
+
+    .companypage {
+        height: 107vh;
+    }
+    .companypage>header {
+        height: 107vh;
+    }
+    .companypage>main{
+        width: 30vw;
+    }
+    .companypage>main>h1 {
+        margin-bottom: 15px;
+    }
+    .companypage>main>article {
+        flex-direction: row;
+        width: 58vw;
+        gap: 15px;
+    }
+    .companypage>main>article>section {
+        gap: 15px;
+    }
+    .companypage>main>article>section>.card {
+        width: 28vw;
+        max-width: 450px;
+    }
+    .companypage>footer {
+        bottom: -6vh;
+    }
+
+    /*contactus page*/
+    .contactuspage {
+        height: 100vh;
+    }
+    .contactuspage>header {
+        height: 100vh;
+        /*width: 25vw;
+        background: rgba(0, 0, 0, 0.4);*/
+    }
+    .contactuspage>header>nav {
+        right: 12%;
+    }
+    .contactuspage>header>nav>ul>li {
+        padding: 20px 0 30px 10px;
+    }
+    .contactuspage>main {
+        width: 40vw;
+    }
+    .contactus {
+        height: 67vh;
+        width: 58vw;
+        margin: 0;
+    }
+    .contactus>h1 {
+        margin: 0px 0px 10px 8px;
+    }
+    .contactus>section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contactus>section>form {
+        width: 50%;
+        margin: 0;
+    }
+    .contactus>section>form>input, form>textarea {
+        width: 94%;
+        max-width: 500px;
+    }
+    .contactus>section>section>p {
+        width: 27vw;
+        margin: 0 0 20px 0;
+    }
+    .contactus>section>section>p:nth-child(1){
+        margin-top: 10px;
+    }
+    .contactus>section>section>address {
+        margin: 0 auto;
+        width: 27vw;
+    }
+
+
+    /*products page*/
+    .productspage>main {
+        max-width: 750px;
+        width: 26vw;
+    }
+    .products{
+        margin: 0 auto;
+        width: 730px;
+    }
+    .galary{
+        width: 785px;
+    }
+    .galary>section {
+        max-width: max-content;
+        width: 750px;
+    }
+    .galary img {
+        width: 230px;
+        max-width: max-content;
+    }
+}
