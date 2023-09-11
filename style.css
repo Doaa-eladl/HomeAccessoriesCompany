@@ -473,7 +473,7 @@ footer>p>a{
     body>button>i {
         color: #33ccff;
     }
-    body>button.show+header{
+    header.show{
         display: flex;
         width: 61vw;
         height: 100vh;
