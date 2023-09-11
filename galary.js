@@ -22,6 +22,7 @@ function onloadcontactuspage(){
 //hambourger menu event
 document.querySelector('body>button').addEventListener('click' , ()=>{
     document.querySelector('body>button').classList.toggle('show');
+    document.querySelector('header').classList.toggle('show');
 })
 
 //resize
